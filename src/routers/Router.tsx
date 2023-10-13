@@ -1,12 +1,13 @@
 import { Route, Routes } from 'react-router-dom'
-import DefaultLayout from '../layouts/DefaultLayout/Index'
+import { DefaultLayout } from '../layouts/DefaultLayout/Index'
+import { Home } from '../pages/Home'
 
-function Router() {
+export const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<DefaultLayout />}></Route>
+      <Route path="/" element={<DefaultLayout />}>
+        <Route path="/" element={<Home />} />
+      </Route>
     </Routes>
   )
 }
-
-export default Router

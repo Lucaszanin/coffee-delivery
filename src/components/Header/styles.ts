@@ -4,45 +4,20 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`
 
-  nav {
-    display: flex;
-    gap: 0.5rem;
+export const LocalizationCard = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 0.25rem;
+  background: ${(props) => props.theme['purple-300']};
+  color: ${(props) => props.theme['purple-700']};
+  border-radius: 6px;
+`
 
-    a {
-      padding: 0.625rem;
-      display: flex;
-      border-radius: 6px;
-      align-items: center;
-      justify-content: center;
-      background: ${(props) => props.theme['yellow-300']};
-      color: ${(props) => props.theme['yellow-700']};
-
-      border-top: 3px solid transparent;
-      border-bottom: 3px solid transparent;
-      border-width: 1px;
-      transition: all 0.2s ease-in-out;
-      position: relative;
-
-      &::before {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 3px;
-        left: 0.8rem;
-        bottom: 5px;
-        background: ${(props) => props.theme['green-500']};
-        transition: all 0.2s ease;
-      }
-
-      &:hover::before,
-      &.active::before {
-        width: 1.5rem;
-      }
-
-      &.active {
-        color: ${(props) => props.theme['green-500']};
-      }
-    }
-  }
+export const ContainerButtons = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 `

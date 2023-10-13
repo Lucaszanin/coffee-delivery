@@ -1,22 +1,19 @@
-import { HeaderContainer } from './styles'
+import { HeaderContainer, LocalizationCard, ContainerButtons } from './styles'
 import logoCoffeDelivery from '../../assets/Logo.svg'
-import { ShoppingCart, Scroll } from 'phosphor-react'
-import { NavLink } from 'react-router-dom'
+import { MapPin } from 'phosphor-react'
+import { MinicarButton } from '../MiniCartButton/Index'
 
-function Header() {
+export const Header = () => {
   return (
     <HeaderContainer>
-      <img src={logoCoffeDelivery} alt="" />
-      <nav>
-        <NavLink to="/" title="Coffe Delivery">
-          <ShoppingCart size={20} weight="fill" />
-        </NavLink>
-        <NavLink to="/checkout" title="Checkout">
-          <Scroll size={24} />
-        </NavLink>
-      </nav>
+      <img src={logoCoffeDelivery} alt="Logo da Cafeteria Coffee Delivery" />
+      <ContainerButtons>
+        <LocalizationCard>
+          <MapPin size={22} weight="fill" color="#8047F8" />
+          São Paulo,SP
+        </LocalizationCard>
+        <MinicarButton itensCount={1} />
+      </ContainerButtons>
     </HeaderContainer>
   )
 }
-
-export default Header
