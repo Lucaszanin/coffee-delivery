@@ -28,15 +28,14 @@ export const InputWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin-left: 1.438rem;
-  width: 4.5rem;
-  padding: 0.563rem;
+  padding: 0.75rem 0.5rem;
   border-radius: 6px;
   background: ${(props) => props.theme['gray-400']};
 `
 
 export const InputAddProducts = styled.input`
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.1rem;
   max-width: 2rem;
   height: 1.25rem;
   padding: 0.25rem;
@@ -91,12 +90,10 @@ const commonStylesButton: CSSObject = {
 
 export const DecreaseButton = styled.button`
   ${commonStylesButton}
-  padding-left: 0.5rem;
 `
 
 export const IncreseButton = styled.button`
   ${commonStylesButton};
-  padding-right: 0.5rem;
 `
 export const ButtonAddToCart = styled.button`
   display: flex;

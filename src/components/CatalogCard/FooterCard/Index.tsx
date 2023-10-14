@@ -42,7 +42,7 @@ export const FooterCard = ({ productValue }: T.FooterCardProps) => {
       <S.InputWrapper>
         <S.DecreaseButton onClick={handleDecrement} className="a">
           <Minus size={16} weight="bold" />
-        </S.DecreaseButton>{' '}
+        </S.DecreaseButton>
         <S.InputAddProducts
           min="1"
           type="number"
