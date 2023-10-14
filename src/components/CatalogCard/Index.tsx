@@ -1,46 +1,29 @@
 import * as T from './types'
 import * as S from './styles'
+import { FooterCard } from './FooterCard/Index'
 
 export const CatalogCard = ({
-  productImage,
+  productImageUrl: productImage,
   productName,
   description,
   coffeType,
   productValue,
 }: T.CatalogCardProps) => {
   return (
-    <div>
-      <img src={productImage} alt="" />
-      <div>
+    <S.CardContainer>
+      <S.ImageContainer>
+        <img src={productImage} alt="" />
+      </S.ImageContainer>
+      <S.BadgeTypeContainer>
         {coffeType.map((type) => (
-          <p key={type}>{type}</p>
+          <S.BadgeTypeText key={type}>{type}</S.BadgeTypeText>
         ))}
-      </div>
-      <div>
-        <span>{productName}</span>
-        <p>{description}</p>
-      </div>
-      <div>
-        <div>
-          <p>R$</p>
-          <span>{productValue}</span>
-        </div>
-        <div>
-          <S.InputAddProducts
-            placeholder="Quantos quartos?"
-            min={1}
-            id="total"
-            type="number"
-          />
-          <button onClick={() => {}} className="a">
-            -
-          </button>
-          <button onClick={() => {}} className="b">
-            +
-          </button>
-        </div>
-        <button>Cart</button>
-      </div>
-    </div>
+      </S.BadgeTypeContainer>
+      <S.DetailsWrapper>
+        <S.ProductName>{productName}</S.ProductName>
+        <S.ProductDescription>{description}</S.ProductDescription>
+      </S.DetailsWrapper>
+      <FooterCard productValue={productValue} />
+    </S.CardContainer>
   )
 }

@@ -14,13 +14,13 @@ const ICONBACKGROUND_COLORS = {
 } as const
 
 interface BackgroundIconProps {
-  backgroundIconColor: keyof typeof ICONBACKGROUND_COLORS
+  backgroundiconcolor: keyof typeof ICONBACKGROUND_COLORS
 }
 
 export const IconBackground = styled.div<BackgroundIconProps>`
   display: flex;
   background-color: ${(props) =>
-    props.theme[ICONBACKGROUND_COLORS[props.backgroundIconColor]]};
+    props.theme[ICONBACKGROUND_COLORS[props.backgroundiconcolor]]};
   padding: 0.5rem;
   border-radius: 50%;
   color: ${(props) => props.theme['base-white']};

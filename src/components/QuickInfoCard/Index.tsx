@@ -7,7 +7,7 @@ export const QuickInfoCard = ({
   backgroundIconColor,
 }: T.QuickInfoCardProps) => (
   <S.CardContainer>
-    <S.IconBackground backgroundIconColor={backgroundIconColor}>
+    <S.IconBackground backgroundiconcolor={backgroundIconColor}>
       {icon}
     </S.IconBackground>
     <S.TextInfo>{text}</S.TextInfo>

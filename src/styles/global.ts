@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 
     :focus{
         outline:0;
-        box-shadow:0 0 0 2px ${(props) => props.theme['purple-300']};
+        
     }
 
     body{
@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
         --webkit-font-smoothing: antialiased;
     }
 
-    body,input,textarea,button,h1,h2,span{
+    body,input,textarea,button,h1,h2,span,p{
         font-family: 'Roboto', sans-serif;
         font-weight:400;
         font-size:0.875rem;
@@ -28,6 +28,10 @@ export const GlobalStyle = createGlobalStyle`
     button{
         outline:none;
         border:none;
+    }
+
+    img{
+        max-width:100%;
     }
 
     

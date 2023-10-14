@@ -1,7 +1,7 @@
 export type CatalogCardProps = {
-  productImage: string
+  productImageUrl: string
   productName: string
   description: string
   coffeType: string[]
-  productValue: string
+  productValue: number
 }

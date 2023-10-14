@@ -39,3 +39,17 @@ export const CardsContainer = styled.div`
   margin-top: 4.125rem;
   gap: 1.25rem;
 `
+export const MainContainer = styled.main`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 4.125rem;
+  gap: 2rem;
+`
+export const MainTitle = styled.span`
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  margin-top: 8.75rem;
+  font-weight: 800;
+  color: ${(props) => props.theme['gray-800']};
+`

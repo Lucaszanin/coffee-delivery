@@ -12,7 +12,7 @@ export const Header = () => {
           <MapPin size={22} weight="fill" color="#8047F8" />
           São Paulo,SP
         </LocalizationCard>
-        <MinicarButton itensCount={1} />
+        <MinicarButton />
       </ContainerButtons>
     </HeaderContainer>
   )

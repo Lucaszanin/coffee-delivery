@@ -1,54 +1,64 @@
 import styled from 'styled-components'
 
-export const InputAddProducts = styled.input`
-  display: inline-flex;
-  height: 32px;
-  padding: 8px;
-  justify-content: center;
+export const CardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 256px;
   align-items: center;
-  gap: 4px;
-  flex-shrink: 0;
-  appearance: textfield;
+  flex: 1;
+  padding-bottom: 1.25rem;
+  border-top-right-radius: 36px;
+  border-bottom-left-radius: 36px;
+  border-top-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background: ${(props) => props.theme['gray-200']};
+`
 
-  input[type='number']::-webkit-inner-spin-button {
-    appearance: none;
-  }
+export const ImageContainer = styled.div`
+  display: flex;
+  flex: 1;
+  margin-top: -10%;
+`
 
-  input[type='number'] {
-    outline: none;
-    border-right: 0px;
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-    height: 20px;
-    padding: 1%;
-    border-right: 0 px solid black;
-  }
-  label,
-  input,
-  button {
-    font-size: inherit;
-    padding: 0.2em;
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
-  }
-  button {
-    height: 20px;
-    padding: 1%;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    background-color: white;
-    border-left: 0px solid black;
-    padding-left: 2%;
-    padding-right: 2%;
-    outline: none;
-    cursor: pointer;
-  }
-  button.a {
-    border-right: 0px solid black;
-  }
-  button.b {
-    border-right: 1px solid black;
-  }
+export const BadgeTypeContainer = styled.div`
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+`
+
+export const BadgeTypeText = styled.p`
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  color: ${(props) => props.theme['yellow-700']};
+  background: ${(props) => props.theme['yellow-300']};
+  border-radius: 100px;
+`
+export const ProductName = styled.span`
+  text-align: center;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  color: ${(props) => props.theme['gray-800']};
+`
+export const DetailsWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  margin-bottom: 2.063rem;
+  margin-top: 1rem;
+  padding-inline: 1.25rem;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.5rem;
+`
+export const ProductDescription = styled.p`
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  color: ${(props) => props.theme['gray-600']};
 `

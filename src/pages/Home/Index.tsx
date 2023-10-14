@@ -46,15 +46,107 @@ export const Home = () => {
           />
         </S.ContentRight>
       </S.HeroContainer>
-      <main>
+      <S.MainTitle>Nossos cafés</S.MainTitle>
+      <S.MainContainer>
         <CatalogCard
-          productImage="src\assets\expresso.svg"
+          productImageUrl="src\assets\expresso.svg"
+          coffeType={['Tradicional']}
+          productName="Expresso Tradicional"
+          description="O tradicional café feito com água quente e grãos moídos"
+          productValue={10}
+        />
+        <CatalogCard
+          productImageUrl="src\assets\americano.png"
+          coffeType={['Tradicional']}
+          productName="Expresso Americano"
+          description="Expresso diluído, menos intenso que o tradicional"
+          productValue={10.91}
+        />
+        <CatalogCard
+          productImageUrl="src\assets\cremoso.png"
+          coffeType={['Tradicional']}
+          productName="Expresso Cremoso"
+          description="Café expresso tradicional com espuma cremosa"
+          productValue={11.91}
+        />
+        <CatalogCard
+          productImageUrl="src\assets\express-gelado.png"
+          coffeType={['Tradicional', 'Gelado']}
+          productName="Expresso Gelado"
+          description="Bebida preparada com café expresso e cubos de gelo"
+          productValue={9.91}
+        />
+        <CatalogCard
+          productImageUrl="src\assets\latte.png"
+          coffeType={['Tradicional', 'com leite']}
+          productName="Latte"
+          description="Uma dose de café expresso com o dobro de leite e espuma cremosa"
+          productValue={9.91}
+        />
+        <CatalogCard
+          productImageUrl="src\assets\expresso.svg"
           coffeType={['Tradicional', 'Gelado']}
           productName="Expresso Tradicional"
           description="O tradicional café feito com água quente e grãos moídos"
-          productValue="9,90"
+          productValue={9.91}
         />
-      </main>
+        <CatalogCard
+          productImageUrl="src\assets\expresso.svg"
+          coffeType={['Tradicional', 'Gelado']}
+          productName="Expresso Tradicional"
+          description="O tradicional café feito com água quente e grãos moídos"
+          productValue={9.91}
+        />
+        <CatalogCard
+          productImageUrl="src\assets\expresso.svg"
+          coffeType={['Tradicional', 'Gelado']}
+          productName="Expresso Tradicional"
+          description="O tradicional café feito com água quente e grãos moídos"
+          productValue={9.91}
+        />{' '}
+        <CatalogCard
+          productImageUrl="src\assets\expresso.svg"
+          coffeType={['Tradicional', 'Gelado']}
+          productName="Expresso Tradicional"
+          description="O tradicional café feito com água quente e grãos moídos"
+          productValue={9.91}
+        />
+        <CatalogCard
+          productImageUrl="src\assets\expresso.svg"
+          coffeType={['Tradicional', 'Gelado']}
+          productName="Expresso Tradicional"
+          description="O tradicional café feito com água quente e grãos moídos"
+          productValue={9.91}
+        />
+        <CatalogCard
+          productImageUrl="src\assets\expresso.svg"
+          coffeType={['Tradicional', 'Gelado']}
+          productName="Expresso Tradicional"
+          description="O tradicional café feito com água quente e grãos moídos"
+          productValue={9.91}
+        />
+        <CatalogCard
+          productImageUrl="src\assets\expresso.svg"
+          coffeType={['Tradicional', 'Gelado']}
+          productName="Expresso Tradicional"
+          description="O tradicional café feito com água quente e grãos moídos"
+          productValue={9.91}
+        />{' '}
+        <CatalogCard
+          productImageUrl="src\assets\expresso.svg"
+          coffeType={['Tradicional', 'Gelado']}
+          productName="Expresso Tradicional"
+          description="O tradicional café feito com água quente e grãos moídos"
+          productValue={9.91}
+        />
+        <CatalogCard
+          productImageUrl="src\assets\expresso.svg"
+          coffeType={['Tradicional', 'Gelado']}
+          productName="Expresso Tradicional"
+          description="O tradicional café feito com água quente e grãos moídos"
+          productValue={9.91}
+        />
+      </S.MainContainer>
     </>
   )
 }

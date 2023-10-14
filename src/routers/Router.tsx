@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import { DefaultLayout } from '../layouts/DefaultLayout/Index'
-import { Home } from '../pages/Home'
+import { Home } from '../pages/Home/Index'
 
 export const Router = () => {
   return (
