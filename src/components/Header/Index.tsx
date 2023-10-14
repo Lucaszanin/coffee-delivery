@@ -1,5 +1,5 @@
 import { HeaderContainer, LocalizationCard, ContainerButtons } from './styles'
-import logoCoffeDelivery from 'src/assets/logo.svg'
+import logoCoffeDelivery from '../../assets/logo.svg'
 import { MapPin } from 'phosphor-react'
 import { MinicarButton } from '../MiniCartButton/Index'
 

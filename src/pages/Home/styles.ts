@@ -43,6 +43,7 @@ export const MainContainer = styled.main`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-top: 4.125rem;
+  padding-bottom: 9.813rem;
   gap: 2rem;
 `
 export const MainTitle = styled.span`

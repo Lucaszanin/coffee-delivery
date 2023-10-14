@@ -1,6 +1,6 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 import { QuickInfoCard } from '../../components/QuickInfoCard/Index'
-import ImageHero from 'src/assets/hero-img.svg'
+import ImageHero from '../../assets/hero-img.svg'
 import * as S from './styles'
 import { CatalogCard } from '../../components/CatalogCard/Index'
 
