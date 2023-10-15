@@ -22,7 +22,7 @@ export const Badge = styled.div`
   height: 1.25rem;
 `
 
-export const Button = styled.a`
+export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,11 +1,12 @@
 import * as T from './types'
 import * as S from './styles'
-import { Minus, Plus, ShoppingCart } from 'phosphor-react'
+import { ShoppingCart } from 'phosphor-react'
 import { ChangeEvent, useCallback, useContext, useMemo, useState } from 'react'
 import { ProductContext } from '../../../contexts/ProductContex'
+import { InputNumberProduct } from '../../InputProductNumber/Index'
 
 export const FooterCard = ({ productValue }: T.FooterCardProps) => {
-  const { setTotal } = useContext(ProductContext)
+  const { setTotal, total } = useContext(ProductContext)
 
   const [quantityProduct, setQuantityProduct] = useState(1)
 
@@ -18,13 +19,15 @@ export const FooterCard = ({ productValue }: T.FooterCardProps) => {
   }
 
   const handleDecrement = () => {
-    if (quantityProduct > 1) setQuantityProduct(1)
-    setQuantityProduct((quantityProduct) => quantityProduct - 1)
+    if (quantityProduct > 0) setQuantityProduct(1)
+    else setQuantityProduct((quantityProduct) => quantityProduct - 1)
   }
 
   const verificarValorAnterior = useCallback(() => {
     setTotal((total) => total + (quantityProduct - total))
-  }, [quantityProduct, setTotal])
+    console.log(total, quantityProduct)
+    if (total >= quantityProduct) setTotal(total + quantityProduct)
+  }, [quantityProduct, setTotal, total])
 
   const handleClick = () => {
     verificarValorAnterior()
@@ -40,20 +43,12 @@ export const FooterCard = ({ productValue }: T.FooterCardProps) => {
         <S.MoneySign>R$</S.MoneySign>
         <S.Value>{value}</S.Value>
       </S.ValueWrapper>
-      <S.InputWrapper>
-        <S.DecreaseButton onClick={handleDecrement} className="a">
-          <Minus size={16} weight="bold" />
-        </S.DecreaseButton>
-        <S.InputAddProducts
-          min="1"
-          type="number"
-          value={quantityProduct}
-          onChange={handleInputChange}
-        />
-        <S.IncreseButton onClick={handleIncrement} className="b">
-          <Plus size={16} weight="bold" />
-        </S.IncreseButton>
-      </S.InputWrapper>
+      <InputNumberProduct
+        onDrecrement={handleDecrement}
+        onIncrement={handleIncrement}
+        onChange={() => handleInputChange}
+        value={quantityProduct}
+      />
       <S.ButtonAddToCart onClick={handleClick}>
         <ShoppingCart size={22} weight="fill" />
       </S.ButtonAddToCart>
