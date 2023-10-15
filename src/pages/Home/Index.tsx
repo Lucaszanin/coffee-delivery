@@ -3,7 +3,7 @@ import { QuickInfoCard } from '../../components/QuickInfoCard/Index'
 import ImageHero from '../../assets/hero-img.svg'
 import * as S from './styles'
 import { CatalogCard } from '../../components/CatalogCard/Index'
-import { productsData } from '../../data/productsData'
+import { productsData } from '../../productsData/productsData'
 
 export const Home = () => {
   return (
