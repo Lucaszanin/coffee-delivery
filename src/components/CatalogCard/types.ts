@@ -1,7 +1,16 @@
+import { ReactNode } from 'react'
+
+export type CaffeTypes =
+  | 'Tradicional'
+  | 'Gelado'
+  | 'Com Leite'
+  | 'Especial'
+  | 'Alcoólico'
+
 export type CatalogCardProps = {
-  productImageUrl: string
+  imageProduct: ReactNode
   productName: string
   description: string
-  coffeType: string[]
+  coffeType: CaffeTypes[]
   productValue: number
 }

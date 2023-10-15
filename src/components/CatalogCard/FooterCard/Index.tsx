@@ -18,11 +18,12 @@ export const FooterCard = ({ productValue }: T.FooterCardProps) => {
   }
 
   const handleDecrement = () => {
+    if (quantityProduct > 1) setQuantityProduct(1)
     setQuantityProduct((quantityProduct) => quantityProduct - 1)
   }
 
   const verificarValorAnterior = useCallback(() => {
-    setTotal((total) => total + quantityProduct - total)
+    setTotal((total) => total + (quantityProduct - total))
   }, [quantityProduct, setTotal])
 
   const handleClick = () => {
