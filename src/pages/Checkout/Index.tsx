@@ -1,46 +1,78 @@
+import {
+  Bank,
+  Coffee,
+  CreditCard,
+  CurrencyDollar,
+  MapPinLine,
+  Money,
+} from 'phosphor-react'
 import { InputNumberProduct } from '../../components/InputProductNumber/Index'
 import { SVG } from '../../components/SVG/Index'
 import * as S from './styles'
+import { PaymentOptionButton } from './components/PaymentOptionButton/Index'
 
 export const Checkout = () => {
   return (
     <S.Container>
       <div>
-        <span>Complete seu pedido</span>
-        <div>
-          <div>
-            <span>Endereço de Entrega</span>
-            <p>Informe o endereço onde deseja receber seu pedido</p>
-          </div>
+        <S.Title>Complete seu pedido</S.Title>
+        <S.ContainerCard>
+          <S.WrapperHeader>
+            <MapPinLine size={22} weight="regular" color="#C47F17" />
+            <S.WrapperText>
+              <S.HighlightedText>Endereço de Entrega</S.HighlightedText>
+              <S.NormalText>
+                Informe o endereço onde deseja receber seu pedido
+              </S.NormalText>
+            </S.WrapperText>
+          </S.WrapperHeader>
           <form>
-            <input type="text" placeholder="CEP" />
-            <input type="text" placeholder="RUA" />
-            <div>
-              <input type="text" placeholder="Número" />
-              <input type="text" placeholder="Complemento" />
-            </div>
-            <div>
-              <input type="text" placeholder="Bairro" />
-              <input type="text" placeholder="Cidade" />
-              <input type="text" placeholder="Estado" />
-            </div>
+            <S.BaseInput width={'40%'} type="text" placeholder="CEP" />
+            <S.BaseInput type="text" placeholder="RUA" />
+            <S.ContainerInputs>
+              <S.BaseInput width={'40%'} type="text" placeholder="Número" />
+              <S.BaseInput
+                width={'60%'}
+                type="text"
+                placeholder="Complemento"
+              />
+            </S.ContainerInputs>
+            <S.ContainerInputs>
+              <S.BaseInput width={'40%'} type="text" placeholder="Bairro" />
+              <S.BaseInput width={'50%'} type="text" placeholder="Cidade" />
+              <S.BaseInput width={'10%'} type="text" placeholder="ES" />
+            </S.ContainerInputs>
           </form>
-        </div>
-        <div>
-          <span>Pagamento</span>
-          <p>
-            O pagamento é feito na entrega. Escolha a forma que deseja pagar
-          </p>
-          <div style={{ display: 'flex', gap: '10px' }}>
-            <button>Cartão de crédito</button>
-            <button>Cartão de débito</button>
-            <button>Dinheiro</button>
-          </div>
-        </div>
+        </S.ContainerCard>
+        <S.ContainerCard>
+          <S.WrapperHeader>
+            <CurrencyDollar size={22} weight="regular" color="#8047F8" />
+            <S.WrapperText>
+              <S.HighlightedText>Pagamento</S.HighlightedText>
+              <S.NormalText>
+                O pagamento é feito na entrega. Escolha a forma que deseja pagar
+              </S.NormalText>
+            </S.WrapperText>
+          </S.WrapperHeader>
+          <S.ButtonsWrapper>
+            <PaymentOptionButton
+              text="Cartão de crédito"
+              icon={<CreditCard size={16} weight="regular" color="#8047F8" />}
+            />{' '}
+            <PaymentOptionButton
+              text="Cartão de débito"
+              icon={<Bank size={16} weight="regular" color="#8047F8" />}
+            />
+            <PaymentOptionButton
+              text="Dinheiro"
+              icon={<Money size={16} weight="regular" color="#8047F8" />}
+            />
+          </S.ButtonsWrapper>
+        </S.ContainerCard>
       </div>
       <div>
-        <span>Cafés selecionados</span>
-        <div>
+        <S.Title>Cafés selecionados</S.Title>
+        <S.ContainerCard>
           <div>
             <div style={{ display: 'flex' }}>
               <div>
@@ -77,7 +109,7 @@ export const Checkout = () => {
             </div>
             <button style={{ padding: '1rem' }}>confirmar pedido</button>
           </div>
-        </div>
+        </S.ContainerCard>
       </div>
     </S.Container>
   )
