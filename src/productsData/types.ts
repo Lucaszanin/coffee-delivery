@@ -4,7 +4,7 @@ import type { CaffeTypes } from '../components/CatalogCard/types'
 export type ProductsDataProps = {
   imageProduct: ReactNode
   productName: string
-  productValue: number
+  productValue: number | string
   productDescription: string
   coffeType: CaffeTypes[]
 }

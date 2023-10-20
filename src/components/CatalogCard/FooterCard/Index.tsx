@@ -4,9 +4,10 @@ import { ShoppingCart } from 'phosphor-react'
 import { ChangeEvent, useCallback, useContext, useMemo, useState } from 'react'
 import { ProductContext } from '../../../contexts/ProductContex'
 import { InputNumberProduct } from '../../InputProductNumber/Index'
+import { productsData } from '../../../productsData/productsData'
 
 export const FooterCard = ({ productValue }: T.FooterCardProps) => {
-  const { setTotal, total } = useContext(ProductContext)
+  const { setTotal, total, addProductInCart } = useContext(ProductContext)
 
   const [quantityProduct, setQuantityProduct] = useState(1)
 
@@ -29,13 +30,18 @@ export const FooterCard = ({ productValue }: T.FooterCardProps) => {
     if (total >= quantityProduct) setTotal(total + quantityProduct)
   }, [quantityProduct, setTotal, total])
 
-  const handleClick = () => {
-    verificarValorAnterior()
-  }
-
   const value = useMemo(() => {
     return (productValue * quantityProduct).toFixed(2)
   }, [quantityProduct, productValue])
+
+  const handleClick = () => {
+    addProductInCart({
+      ...productsData,
+      quantity: quantityProduct,
+      productValue: value,
+    })
+    verificarValorAnterior()
+  }
 
   return (
     <S.FooterContainer>
