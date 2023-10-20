@@ -31,7 +31,7 @@ export const FooterCard = ({ productValue }: T.FooterCardProps) => {
   }, [quantityProduct, setTotal, total])
 
   const value = useMemo(() => {
-    return (productValue * quantityProduct).toFixed(2)
+    return Number((productValue * quantityProduct).toFixed(2))
   }, [quantityProduct, productValue])
 
   const handleClick = () => {
@@ -39,6 +39,10 @@ export const FooterCard = ({ productValue }: T.FooterCardProps) => {
       ...productsData,
       quantity: quantityProduct,
       productValue: value,
+      imageProduct: undefined,
+      productName: '',
+      productDescription: '',
+      coffeType: [],
     })
     verificarValorAnterior()
   }

@@ -1,6 +1,5 @@
 import {
   Bank,
-  Coffee,
   CreditCard,
   CurrencyDollar,
   MapPinLine,

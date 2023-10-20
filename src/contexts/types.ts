@@ -12,7 +12,7 @@ export type ProductContextProps = {
   quantityProduct: number
   setQuantityProduct: React.Dispatch<React.SetStateAction<number>>
   addProductInCart: (datanew: Product) => void
-  product: Product[]
+  product: ProductsDataProps[]
 }
 
 export type ProductsData = {
