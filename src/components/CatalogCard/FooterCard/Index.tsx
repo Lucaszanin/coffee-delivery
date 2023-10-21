@@ -57,7 +57,7 @@ export const FooterCard = ({ productValue }: T.FooterCardProps) => {
         onDrecrement={handleDecrement}
         onIncrement={handleIncrement}
         onChange={() => handleInputChange}
-        value={quantityProduct}
+        quantity={quantityProduct}
       />
       <S.ButtonAddToCart onClick={handleClick}>
         <ShoppingCart size={22} weight="fill" />

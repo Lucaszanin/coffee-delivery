@@ -6,7 +6,7 @@ export const InputNumberProduct = ({
   onDrecrement,
   onIncrement,
   onChange,
-  value,
+  quantity,
 }: T.InputNumberProductProps) => {
   return (
     <S.InputWrapper>
@@ -16,7 +16,7 @@ export const InputNumberProduct = ({
       <S.InputAddProducts
         min="1"
         type="number"
-        value={value}
+        value={quantity}
         onChange={onChange}
       />
       <S.IncreseButton onClick={onIncrement} className="b">

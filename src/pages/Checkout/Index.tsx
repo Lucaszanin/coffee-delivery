@@ -5,10 +5,10 @@ import {
   MapPinLine,
   Money,
 } from 'phosphor-react'
-import { InputNumberProduct } from '../../components/InputProductNumber/Index'
-import { SVG } from '../../components/SVG/Index'
+
 import * as S from './styles'
 import { PaymentOptionButton } from './components/PaymentOptionButton/Index'
+import { Cart } from '../../components/Cart/Index'
 
 export const Checkout = () => {
   return (
@@ -72,28 +72,17 @@ export const Checkout = () => {
       <div>
         <S.Title>Cafés selecionados</S.Title>
         <S.ContainerCard>
-          <div>
-            <div style={{ display: 'flex' }}>
-              <div>
-                <SVG name="coffe-expresso" />
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <p>Expresso Tradicional</p>
-                <div style={{ display: 'flex' }}>
-                  <InputNumberProduct
-                    onDrecrement={() => {}}
-                    onIncrement={() => {}}
-                    onChange={() => {}}
-                    value={1}
-                  />
-                  <button>Remover</button>
-                </div>
-              </div>
-              <div>
-                <span>R$9,90</span>
-              </div>
-            </div>
-            <hr />
+          <S.ContentWrapper>
+            <Cart
+              productName={'Café Expresso'}
+              productQuantity={1}
+              totalValue={'R$ 9,90'}
+              productImageName={'coffe-americano'}
+              onDrecrement={() => {}}
+              onIncrement={() => {}}
+              onChange={() => {}}
+            />
+
             <div style={{ display: 'flex' }}>
               <div>
                 <p>Total de itens</p>
@@ -107,7 +96,7 @@ export const Checkout = () => {
               </div>
             </div>
             <button style={{ padding: '1rem' }}>confirmar pedido</button>
-          </div>
+          </S.ContentWrapper>
         </S.ContainerCard>
       </div>
     </S.Container>
