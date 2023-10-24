@@ -5,6 +5,11 @@ export const Container = styled.div`
   align-items: flex-start;
   gap: 2rem;
   margin-top: 4.5rem;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 export const BaseInput = styled.input`
   width: ${(props) => props.width || '100%'};
@@ -79,10 +84,54 @@ export const ButtonsWrapper = styled.div`
   width: 100%;
   gap: 0.5rem;
 `
-export const ContentWrapper = styled.div`
+
+export const FooterContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 2.5rem;
+`
+
+export const LineContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  &:not(:first-child) {
+    padding-top: 0.75rem;
+  }
+`
+
+type DetailsProps = { bold: boolean }
+
+export const DetailText = styled.p<DetailsProps>`
+  font-style: normal;
+  font-size: ${({ bold }) => (bold ? '1.25rem' : '.75rem')};
+  font-weight: ${({ bold }) => (bold ? ' 700' : '400')};
+`
+export const DetailValue = styled.p<DetailsProps>`
+  font-size: ${({ bold }) => (bold ? '1.25rem' : '.75rem')};
+  font-weight: ${({ bold }) => (bold ? '700' : '400')};
+`
+export const SendOrderButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  padding: 0.75rem 0.5rem;
+  width: 100%;
+  background: ${(props) => props.theme['yellow-500']};
+  line-height: 160%;
+  text-transform: uppercase;
+  color: ${(props) => props.theme['base-white']};
+  font-weight: 700;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 1.5rem;
+
+  &:hover {
+    background: ${(props) => props.theme['yellow-700']};
+  }
 `

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const HeroContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 3.5rem;
+  justify-content: space-between;
   margin-top: 5.875rem;
 `
 export const WrapperContentLeft = styled.div`
@@ -16,7 +16,6 @@ export const WrapperContentLeft = styled.div`
 export const ContentRight = styled.div`
   display: flex;
   justify-content: flex-end;
-  flex: 1;
 `
 export const HeroTitle = styled.h1`
   color: ${(props) => props.theme['gray-900']};

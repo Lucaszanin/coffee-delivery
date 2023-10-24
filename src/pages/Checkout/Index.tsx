@@ -72,31 +72,39 @@ export const Checkout = () => {
       <div>
         <S.Title>Cafés selecionados</S.Title>
         <S.ContainerCard>
-          <S.ContentWrapper>
-            <Cart
-              productName={'Café Expresso'}
-              productQuantity={1}
-              totalValue={'R$ 9,90'}
-              productImageName={'coffe-americano'}
-              onDrecrement={() => {}}
-              onIncrement={() => {}}
-              onChange={() => {}}
-            />
-
-            <div style={{ display: 'flex' }}>
-              <div>
-                <p>Total de itens</p>
-                <p>Entrega</p>
-                <span>Total</span>
-              </div>
-              <div>
-                <p>R$ 29,70</p>
-                <p>R$ 3,50</p>
-                <span>R$ 33,20</span>
-              </div>
-            </div>
-            <button style={{ padding: '1rem' }}>confirmar pedido</button>
-          </S.ContentWrapper>
+          <Cart
+            productName={'Café Americano'}
+            productQuantity={1}
+            totalValue={'R$ 9,90'}
+            productImageName={'coffe-americano'}
+            onDrecrement={() => {}}
+            onIncrement={() => {}}
+            onChange={() => {}}
+          />
+          <Cart
+            productName={'Café Expresso'}
+            productQuantity={1}
+            totalValue={'R$ 11,90'}
+            productImageName={'coffe-expresso'}
+            onDrecrement={() => {}}
+            onIncrement={() => {}}
+            onChange={() => {}}
+          />
+          <S.FooterContainer>
+            <S.LineContent>
+              <S.DetailText bold={false}>Total de itens</S.DetailText>
+              <S.DetailValue bold={false}>R$ 29,70</S.DetailValue>
+            </S.LineContent>
+            <S.LineContent>
+              <S.DetailText bold={false}>Entrega</S.DetailText>
+              <S.DetailValue bold={false}>R$ 3,50</S.DetailValue>
+            </S.LineContent>
+            <S.LineContent>
+              <S.DetailText bold>Total</S.DetailText>
+              <S.DetailValue bold>R$ 33,20</S.DetailValue>
+            </S.LineContent>
+          </S.FooterContainer>
+          <S.SendOrderButton>confirmar pedido</S.SendOrderButton>
         </S.ContainerCard>
       </div>
     </S.Container>

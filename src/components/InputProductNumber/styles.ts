@@ -5,7 +5,7 @@ export const InputWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin-left: 1.438rem;
-  padding: 0.75rem 0.5rem;
+  padding: 0.5rem;
   border-radius: 6px;
   background: ${(props) => props.theme['gray-400']};
 `

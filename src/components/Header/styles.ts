@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
-  position: fixed;
-  width: 85%;
+  position: sticky;
+  width: 100%;
   justify-content: space-between;
 `
 

@@ -14,7 +14,7 @@ export const Cart = ({
   onChange,
 }: T.CartProps) => {
   return (
-    <div>
+    <S.ContainerWrapper>
       <S.Container>
         <S.ImageWrapper>
           <SVG name={productImageName} />
@@ -38,6 +38,6 @@ export const Cart = ({
         <S.ProductValue>{totalValue}</S.ProductValue>
       </S.Container>
       <S.Divider />
-    </div>
+    </S.ContainerWrapper>
   )
 }
