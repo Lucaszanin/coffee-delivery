@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 2.5rem;
+  justify-content: space-between;
   margin-top: 4.5rem;
 
   @media (max-width: 1200px) {
@@ -67,13 +68,17 @@ export const WrapperHeader = styled.div`
   align-items: flex-start;
   gap: 0.5rem;
 `
+type ContainerCardProps = { isDetails: boolean }
 
-export const ContainerCard = styled.div`
+export const ContainerCard = styled.div<ContainerCardProps>`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 2.5rem;
-  border-radius: 6px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: ${({ isDetails }) => (isDetails ? '40px' : '6px')};
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: ${({ isDetails }) => (isDetails ? '40px' : '6px')};
   margin-top: 1rem;
   background: ${(props) => props.theme['gray-200']};
 `
@@ -133,5 +138,6 @@ export const SendOrderButton = styled.button`
 
   &:hover {
     background: ${(props) => props.theme['yellow-700']};
+    transform: scale(1.02);
   }
 `

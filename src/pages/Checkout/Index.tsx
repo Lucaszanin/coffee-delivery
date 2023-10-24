@@ -15,7 +15,7 @@ export const Checkout = () => {
     <S.Container>
       <div>
         <S.Title>Complete seu pedido</S.Title>
-        <S.ContainerCard>
+        <S.ContainerCard isDetails={false}>
           <S.WrapperHeader>
             <MapPinLine size={22} weight="regular" color="#C47F17" />
             <S.WrapperText>
@@ -43,7 +43,7 @@ export const Checkout = () => {
             </S.ContainerInputs>
           </form>
         </S.ContainerCard>
-        <S.ContainerCard>
+        <S.ContainerCard isDetails={false}>
           <S.WrapperHeader>
             <CurrencyDollar size={22} weight="regular" color="#8047F8" />
             <S.WrapperText>
@@ -71,7 +71,7 @@ export const Checkout = () => {
       </div>
       <div>
         <S.Title>Cafés selecionados</S.Title>
-        <S.ContainerCard>
+        <S.ContainerCard isDetails>
           <Cart
             productName={'Café Americano'}
             productQuantity={1}
