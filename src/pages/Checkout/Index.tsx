@@ -9,6 +9,7 @@ import {
 import * as S from './styles'
 import { PaymentOptionButton } from './components/PaymentOptionButton/Index'
 import { Cart } from '../../components/Cart/Index'
+import { Link } from 'react-router-dom'
 
 export const Checkout = () => {
   return (
@@ -104,7 +105,9 @@ export const Checkout = () => {
               <S.DetailValue bold>R$ 33,20</S.DetailValue>
             </S.LineContent>
           </S.FooterContainer>
-          <S.SendOrderButton>confirmar pedido</S.SendOrderButton>
+          <Link to="/finishorderpage">
+            <S.SendOrderButton>confirmar pedido</S.SendOrderButton>
+          </Link>
         </S.ContainerCard>
       </div>
     </S.Container>
