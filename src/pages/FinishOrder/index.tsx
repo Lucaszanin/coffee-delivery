@@ -1,5 +1,5 @@
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
-import  DeliveryImage  from '../../assets/delivery.svg'
+import DeliveryImage from '../../assets/delivery.svg'
 import * as S from './styles'
 
 export const FinishOrderPage = () => {

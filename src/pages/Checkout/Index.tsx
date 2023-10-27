@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom'
 export const Checkout = () => {
   return (
     <S.Container>
-      <div>
+      <S.LeftContent>
         <S.Title>Complete seu pedido</S.Title>
         <S.ContainerCard isDetails={false}>
           <S.WrapperHeader>
@@ -69,8 +69,8 @@ export const Checkout = () => {
             />
           </S.ButtonsWrapper>
         </S.ContainerCard>
-      </div>
-      <div>
+      </S.LeftContent>
+      <S.RightContent>
         <S.Title>Cafés selecionados</S.Title>
         <S.ContainerCard isDetails>
           <Cart
@@ -109,7 +109,7 @@ export const Checkout = () => {
             <S.SendOrderButton>confirmar pedido</S.SendOrderButton>
           </Link>
         </S.ContainerCard>
-      </div>
+      </S.RightContent>
     </S.Container>
   )
 }

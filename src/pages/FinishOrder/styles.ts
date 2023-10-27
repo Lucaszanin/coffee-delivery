@@ -6,11 +6,16 @@ export const Container = styled.div`
   gap: 2.5rem;
   justify-content: space-between;
   margin-top: 4.5rem;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 export const WrapperContentLeft = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  width: 100%;
 `
 export const Title = styled.h1`
   font-size: 2rem;
@@ -30,8 +35,13 @@ export const WrapperInformation = styled.div`
   align-items: flex-start;
   gap: 32px;
   border-radius: 6px 36px;
-  border: 1px solid #dbac2c;
+  border: 1px solid ${(props) => props.theme['yellow-500']};
   margin-top: 2.5rem;
+
+  @media (max-width: 1200px) {
+    align-items: center;
+    width: 100%;
+  }
 `
 export const ContainerDetail = styled.div`
   display: flex;
@@ -83,5 +93,5 @@ export const RoundedBackgroundIcon = styled.div<RoundedProps>`
 export const WrapperContentRight = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  width: 100%;
 `

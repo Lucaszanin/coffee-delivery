@@ -10,6 +10,7 @@ export const Container = styled.div`
   @media (max-width: 1200px) {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 `
 export const BaseInput = styled.input`
@@ -41,6 +42,21 @@ export const ContainerInputs = styled.div`
   gap: 0.75rem;
   margin-top: 1rem;
 `
+
+export const LeftContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+export const RightContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
+`
+
 export const Title = styled.h3`
   font-family: 'Baloo 2', sans-serif;
   font-size: 1.125rem;
@@ -73,7 +89,6 @@ type ContainerCardProps = { isDetails: boolean }
 export const ContainerCard = styled.div<ContainerCardProps>`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   padding: 2.5rem;
   border-top-left-radius: 6px;
   border-top-right-radius: ${({ isDetails }) => (isDetails ? '40px' : '6px')};
@@ -81,6 +96,11 @@ export const ContainerCard = styled.div<ContainerCardProps>`
   border-bottom-left-radius: ${({ isDetails }) => (isDetails ? '40px' : '6px')};
   margin-top: 1rem;
   background: ${(props) => props.theme['gray-200']};
+
+  @media (max-width: 1200px) {
+    width: 83vw;
+    display: block;
+  }
 `
 export const ButtonsWrapper = styled.div`
   display: flex;
