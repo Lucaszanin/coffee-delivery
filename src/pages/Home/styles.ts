@@ -40,7 +40,7 @@ export const CardsContainer = styled.div`
 `
 export const MainContainer = styled.main`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   grid-auto-flow: row;
   width: 100%;
   gap: 2rem;
@@ -48,12 +48,13 @@ export const MainContainer = styled.main`
   padding-bottom: 9.813rem;
 
   @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    gap: 0;
+    gap: 0.5rem;
   }
 
-  @media (max-width: 1200px) {
-    justify-items: center;
+  @media (max-width: 425px) {
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 0.5rem;
   }
 `

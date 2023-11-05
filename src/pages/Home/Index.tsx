@@ -49,16 +49,19 @@ export const Home = () => {
       </S.HeroContainer>
       <S.MainTitle>Nossos cafés</S.MainTitle>
       <S.MainContainer>
-        {productsData.data.map((product) => (
-          <CatalogCard
-            key={product.productName}
-            imageProduct={product.imageProduct}
-            coffeType={product.coffeType}
-            productName={product.productName}
-            description={product.productDescription}
-            productValue={product.productValue}
-          />
-        ))}
+        {productsData.data.map((product) => {
+          return (
+            <CatalogCard
+              productData={{ ...product }}
+              key={product.productName}
+              imageProduct={product.imageProduct}
+              coffeType={product.coffeType}
+              productName={product.productName}
+              description={product.productDescription}
+              productValue={product.productValue}
+            />
+          )
+        })}
       </S.MainContainer>
     </>
   )

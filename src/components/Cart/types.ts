@@ -1,10 +1,10 @@
-import type { SVGProps } from '../SVG/types'
+import { ReactNode } from 'react'
 
 export type CartProps = {
   productName: string
-  productQuantity: number
+  productQuantity?: number
   totalValue: string
-  productImageName: SVGProps['name']
+  productImageName: ReactNode
   onDrecrement: () => void
   onIncrement: () => void
   onChange: () => void

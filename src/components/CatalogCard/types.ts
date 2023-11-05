@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { ProductsDataProps } from '../../productsData/types'
 
 export type CaffeTypes =
   | 'Tradicional'
@@ -13,4 +14,5 @@ export type CatalogCardProps = {
   description: string
   coffeType: CaffeTypes[]
   productValue: number
+  productData: ProductsDataProps
 }

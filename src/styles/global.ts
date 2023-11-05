@@ -36,7 +36,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     
-    @media (max-width: 768px) {
+    /* @media (max-width: 768px) {
         html,
         body,
         input,
@@ -46,5 +46,5 @@ export const GlobalStyle = createGlobalStyle`
         button {
           font-size: 87.5% !important;
         }
-      }
+      } */
 `

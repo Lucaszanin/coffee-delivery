@@ -1,7 +1,7 @@
 import * as T from './types'
 import * as S from './styles'
 import { InputNumberProduct } from '../InputProductNumber/Index'
-import { SVG } from '../SVG/Index'
+
 import { Trash } from 'phosphor-react'
 
 export const Cart = ({
@@ -16,9 +16,7 @@ export const Cart = ({
   return (
     <S.ContainerWrapper>
       <S.Container>
-        <S.ImageWrapper>
-          <SVG name={productImageName} />
-        </S.ImageWrapper>
+        <S.ImageWrapper>{productImageName}</S.ImageWrapper>
 
         <S.ContentMidWrapper>
           <S.ProductName>{productName}</S.ProductName>
@@ -35,7 +33,7 @@ export const Cart = ({
             </S.RemoveButton>
           </S.InputWrapper>{' '}
         </S.ContentMidWrapper>
-        <S.ProductValue>{totalValue}</S.ProductValue>
+        <S.ProductValue>R$ {totalValue}</S.ProductValue>
       </S.Container>
       <S.Divider />
     </S.ContainerWrapper>

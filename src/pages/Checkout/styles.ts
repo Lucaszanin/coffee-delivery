@@ -128,7 +128,7 @@ export const LineContent = styled.div`
   }
 `
 
-type DetailsProps = { bold: boolean }
+type DetailsProps = { bold?: boolean }
 
 export const DetailText = styled.p<DetailsProps>`
   font-style: normal;

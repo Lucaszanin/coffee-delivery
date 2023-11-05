@@ -4,10 +4,13 @@ import { ShoppingCart } from 'phosphor-react'
 import { ChangeEvent, useCallback, useContext, useMemo, useState } from 'react'
 import { ProductContext } from '../../../contexts/ProductContex'
 import { InputNumberProduct } from '../../InputProductNumber/Index'
-import { productsData } from '../../../productsData/productsData'
 
-export const FooterCard = ({ productValue }: T.FooterCardProps) => {
-  const { setTotal, total, addProductInCart } = useContext(ProductContext)
+export const FooterCard = ({
+  productValue,
+  productData,
+}: T.FooterCardProps) => {
+  const { setTotal, total, addProductInCart, setValue } =
+    useContext(ProductContext)
 
   const [quantityProduct, setQuantityProduct] = useState(1)
 
@@ -26,23 +29,25 @@ export const FooterCard = ({ productValue }: T.FooterCardProps) => {
 
   const verificarValorAnterior = useCallback(() => {
     setTotal((total) => total + (quantityProduct - total))
-    console.log(total, quantityProduct)
+
     if (total >= quantityProduct) setTotal(total + quantityProduct)
   }, [quantityProduct, setTotal, total])
 
   const value = useMemo(() => {
     return Number((productValue * quantityProduct).toFixed(2))
-  }, [quantityProduct, productValue])
+  }, [productValue, quantityProduct])
 
   const handleClick = () => {
+    setQuantityProduct(quantityProduct)
+    setValue((valueAnt) => valueAnt + value)
     addProductInCart({
-      ...productsData,
+      ...productData,
       quantity: quantityProduct,
       productValue: value,
-      imageProduct: undefined,
-      productName: '',
-      productDescription: '',
-      coffeType: [],
+      imageProduct: productData.imageProduct,
+      productName: productData.productName,
+      productDescription: productData.productDescription,
+      coffeType: productData.coffeType,
     })
     verificarValorAnterior()
   }

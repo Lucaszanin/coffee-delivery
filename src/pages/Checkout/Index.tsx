@@ -10,8 +10,12 @@ import * as S from './styles'
 import { PaymentOptionButton } from './components/PaymentOptionButton/Index'
 import { Cart } from '../../components/Cart/Index'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { ProductContext } from '../../contexts/ProductContex'
 
 export const Checkout = () => {
+  const { product, value } = useContext(ProductContext)
+
   return (
     <S.Container>
       <S.LeftContent>
@@ -73,36 +77,31 @@ export const Checkout = () => {
       <S.RightContent>
         <S.Title>Cafés selecionados</S.Title>
         <S.ContainerCard isDetails>
-          <Cart
-            productName={'Café Americano'}
-            productQuantity={1}
-            totalValue={'R$ 9,90'}
-            productImageName={'coffe-americano'}
-            onDrecrement={() => {}}
-            onIncrement={() => {}}
-            onChange={() => {}}
-          />
-          <Cart
-            productName={'Café Expresso'}
-            productQuantity={1}
-            totalValue={'R$ 11,90'}
-            productImageName={'coffe-expresso'}
-            onDrecrement={() => {}}
-            onIncrement={() => {}}
-            onChange={() => {}}
-          />
+          {product.map((product) => (
+            <Cart
+              key={product.productId}
+              productName={product.productName}
+              productQuantity={product.quantity}
+              totalValue={String(product.productValue)}
+              productImageName={product.imageProduct}
+              onDrecrement={() => {}}
+              onIncrement={() => {}}
+              onChange={() => {}}
+            />
+          ))}
+
           <S.FooterContainer>
             <S.LineContent>
-              <S.DetailText bold={false}>Total de itens</S.DetailText>
-              <S.DetailValue bold={false}>R$ 29,70</S.DetailValue>
+              <S.DetailText>Total de itens</S.DetailText>
+              <S.DetailValue>R$ {value}</S.DetailValue>
             </S.LineContent>
             <S.LineContent>
-              <S.DetailText bold={false}>Entrega</S.DetailText>
-              <S.DetailValue bold={false}>R$ 3,50</S.DetailValue>
+              <S.DetailText>Entrega</S.DetailText>
+              <S.DetailValue>R$ 3,50</S.DetailValue>
             </S.LineContent>
             <S.LineContent>
               <S.DetailText bold>Total</S.DetailText>
-              <S.DetailValue bold>R$ 33,20</S.DetailValue>
+              <S.DetailValue bold>R$ {value + 3.5}</S.DetailValue>
             </S.LineContent>
           </S.FooterContainer>
           <Link to="/finishorderpage">

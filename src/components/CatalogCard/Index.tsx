@@ -8,6 +8,7 @@ export const CatalogCard = ({
   description,
   coffeType,
   productValue,
+  productData,
 }: T.CatalogCardProps) => {
   return (
     <S.CardContainer>
@@ -21,7 +22,7 @@ export const CatalogCard = ({
         <S.ProductName>{productName}</S.ProductName>
         <S.ProductDescription>{description}</S.ProductDescription>
       </S.DetailsWrapper>
-      <FooterCard productValue={productValue} />
+      <FooterCard productValue={productValue} productData={productData} />
     </S.CardContainer>
   )
 }
