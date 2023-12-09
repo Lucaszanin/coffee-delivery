@@ -17,14 +17,12 @@ export const FinishOrderPage = () => {
             </S.RoundedBackgroundIcon>
             <S.ContainerDetailText>
               <S.WrapperDetailText>
-                <S.DetailText bold={false}>
+                <S.DetailText>
                   Entrega em
                   <S.DetailText bold>Rua João Miguel 148</S.DetailText>
                 </S.DetailText>
               </S.WrapperDetailText>
-              <S.DetailText bold={false}>
-                Farrapos - Porto Alegre, RS
-              </S.DetailText>
+              <S.DetailText>Farrapos - Porto Alegre, RS</S.DetailText>
             </S.ContainerDetailText>
           </S.ContainerDetail>
           <S.ContainerDetail>
@@ -32,7 +30,7 @@ export const FinishOrderPage = () => {
               <Timer weight="fill" />
             </S.RoundedBackgroundIcon>
             <S.ContainerDetailText>
-              <S.DetailText bold={false}>Previsão de entrega</S.DetailText>
+              <S.DetailText>Previsão de entrega</S.DetailText>
               <S.DetailText bold>30 min</S.DetailText>
             </S.ContainerDetailText>
           </S.ContainerDetail>
@@ -41,7 +39,7 @@ export const FinishOrderPage = () => {
               <CurrencyDollar weight="regular" />
             </S.RoundedBackgroundIcon>
             <S.ContainerDetailText>
-              <S.DetailText bold={false}>Pagamento na entrega</S.DetailText>
+              <S.DetailText>Pagamento na entrega</S.DetailText>
               <S.DetailText bold>Dinheiro</S.DetailText>
             </S.ContainerDetailText>
           </S.ContainerDetail>

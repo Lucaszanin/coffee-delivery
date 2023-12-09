@@ -9,10 +9,10 @@ export type Product = ProductsDataProps & {
 export type ProductContextProps = {
   total: number
   setTotal: React.Dispatch<React.SetStateAction<number>>
-  quantityProduct: number
-  setQuantityProduct: React.Dispatch<React.SetStateAction<number>>
+  quantityItem: number
+  setQuantityItem: React.Dispatch<React.SetStateAction<number>>
   addProductInCart: (datanew: Product) => void
-  product: ProductsDataProps[]
+  products: ProductsDataProps[]
   value: number
   setValue: React.Dispatch<React.SetStateAction<number>>
 }

@@ -50,7 +50,7 @@ export const ContainerDetail = styled.div`
   width: 100%;
 `
 
-type DetailsProps = { bold: boolean }
+type DetailsProps = { bold?: boolean }
 
 export const DetailText = styled.p<DetailsProps>`
   font-style: normal;

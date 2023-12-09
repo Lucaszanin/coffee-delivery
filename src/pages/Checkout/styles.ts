@@ -84,16 +84,18 @@ export const WrapperHeader = styled.div`
   align-items: flex-start;
   gap: 0.5rem;
 `
-type ContainerCardProps = { isDetails: boolean }
+type ContainerCardProps = { isdetails?: boolean }
 
 export const ContainerCard = styled.div<ContainerCardProps>`
   display: flex;
   flex-direction: column;
   padding: 2.5rem;
   border-top-left-radius: 6px;
-  border-top-right-radius: ${({ isDetails }) => (isDetails ? '40px' : '6px')};
+  border-top-right-radius: ${({ isdetails: isDetails }) =>
+    isDetails ? '40px' : '6px'};
   border-bottom-right-radius: 6px;
-  border-bottom-left-radius: ${({ isDetails }) => (isDetails ? '40px' : '6px')};
+  border-bottom-left-radius: ${({ isdetails: isDetails }) =>
+    isDetails ? '40px' : '6px'};
   margin-top: 1rem;
   background: ${(props) => props.theme['gray-200']};
 

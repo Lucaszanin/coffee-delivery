@@ -19,22 +19,22 @@ export const Home = () => {
           </S.HeroSubtTitle>
           <S.CardsContainer>
             <QuickInfoCard
-              backgroundIconColor="yellowDark"
+              backgroundiconcolor="yellowDark"
               icon={<ShoppingCart size={16} weight="fill" />}
               text="Compra simples e segura"
             />
             <QuickInfoCard
-              backgroundIconColor="gray"
+              backgroundiconcolor="gray"
               icon={<Package size={16} weight="fill" />}
               text="Embalagem mantém o café intacto"
             />
             <QuickInfoCard
-              backgroundIconColor="yellowMid"
+              backgroundiconcolor="yellowMid"
               icon={<Timer size={16} weight="fill" />}
               text="Entrega rápida e rastreada"
             />
             <QuickInfoCard
-              backgroundIconColor="purple"
+              backgroundiconcolor="purple"
               icon={<Coffee size={16} weight="fill" />}
               text="O café vai fresquinho até você"
             />

@@ -7,32 +7,39 @@ export const ProductContext = createContext({} as T.ProductContextProps)
 export function ProductContextProvider({ children }: T.ProductContextReturn) {
   const [total, setTotal] = useState(0)
   const [value, setValue] = useState(0)
-  const [quantityProduct, setQuantityProduct] = useState(1)
-  const [product, setProduct] = useState<ProductsDataProps[]>([])
+  const [quantityItem, setQuantityItem] = useState(0)
+  const [products, setProducts] = useState<ProductsDataProps[]>([])
 
-  const addProductInCart = useCallback((datanew: T.Product) => {
-    const newData: ProductsDataProps = {
-      imageProduct: datanew.imageProduct,
-      productId: String(new Date().getTime()),
-      productName: datanew.productName,
-      productValue: datanew.productValue,
-      quantity: datanew.quantity,
-      productDescription: '',
-      coffeType: [],
-    }
+  const addProductInCart = useCallback(
+    (datanew: T.Product) => {
+      const itemIndex = products.findIndex(
+        (item) => item.productId === datanew.productId,
+      )
 
-    setProduct((state) => [...state, newData])
-  }, [])
+      if (itemIndex !== -1) {
+        const updatedProducts = [...products]
+        updatedProducts[itemIndex] = {
+          ...updatedProducts[itemIndex],
+          quantity: updatedProducts[itemIndex].quantity + datanew.quantity,
+        }
+
+        setProducts(updatedProducts)
+      } else {
+        setProducts((prevProducts) => [...prevProducts, datanew])
+      }
+    },
+    [products],
+  )
 
   return (
     <ProductContext.Provider
       value={{
         total,
         addProductInCart,
-        product,
+        products,
         setTotal,
-        quantityProduct,
-        setQuantityProduct,
+        quantityItem,
+        setQuantityItem,
         setValue,
         value,
       }}

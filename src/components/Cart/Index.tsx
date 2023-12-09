@@ -31,7 +31,7 @@ export const Cart = ({
               <Trash size={16} weight="regular" color="#8047F8" />
               Remover
             </S.RemoveButton>
-          </S.InputWrapper>{' '}
+          </S.InputWrapper>
         </S.ContentMidWrapper>
         <S.ProductValue>R$ {totalValue}</S.ProductValue>
       </S.Container>

@@ -9,13 +9,14 @@ export const FooterCard = ({
   productValue,
   productData,
 }: T.FooterCardProps) => {
-  const { setTotal, total, addProductInCart, setValue } =
+  const { setTotal, total, addProductInCart, setValue, setQuantityItem } =
     useContext(ProductContext)
 
   const [quantityProduct, setQuantityProduct] = useState(1)
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setQuantityProduct((quantity) => quantity + Number(e.target.value))
+    // setQuantityProduct((quantity) => quantity + Number(e.target.value))
+    setQuantityItem((quantity) => quantity + Number(e.target.value))
   }
 
   const handleIncrement = () => {
@@ -23,14 +24,19 @@ export const FooterCard = ({
   }
 
   const handleDecrement = () => {
-    if (quantityProduct > 0) setQuantityProduct(1)
-    else setQuantityProduct((quantityProduct) => quantityProduct - 1)
+    if (quantityProduct > 0) {
+      setQuantityProduct(1)
+    } else {
+      setQuantityProduct((quantityProduct) => quantityProduct - 1)
+    }
   }
 
   const verificarValorAnterior = useCallback(() => {
     setTotal((total) => total + (quantityProduct - total))
 
-    if (total >= quantityProduct) setTotal(total + quantityProduct)
+    if (total >= quantityProduct) {
+      setTotal(total + quantityProduct)
+    }
   }, [quantityProduct, setTotal, total])
 
   const value = useMemo(() => {
@@ -38,12 +44,15 @@ export const FooterCard = ({
   }, [productValue, quantityProduct])
 
   const handleClick = () => {
-    setQuantityProduct(quantityProduct)
+    // setQuantityProduct(quantityProduct)
+    setQuantityItem(quantityProduct)
     setValue((valueAnt) => valueAnt + value)
+
     addProductInCart({
       ...productData,
       quantity: quantityProduct,
       productValue: value,
+      productId: productData.productId,
       imageProduct: productData.imageProduct,
       productName: productData.productName,
       productDescription: productData.productDescription,

@@ -4,7 +4,7 @@ import * as T from './types'
 export const QuickInfoCard = ({
   icon,
   text,
-  backgroundIconColor,
+  backgroundiconcolor: backgroundIconColor,
 }: T.QuickInfoCardProps) => (
   <S.CardContainer>
     <S.IconBackground backgroundiconcolor={backgroundIconColor}>
